@@ -1,0 +1,581 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd,
+fieldset, form, label, legend, ul, li, ol,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/**********************************************
+Master Layout
+************************************************/
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--color-white);
+	font-size: 16px;
+}
+
+main {
+
+}
+
+img {
+	width: 100%;
+}
+
+hr {
+	background: #e2ddcc;
+	border: 0;
+	clear: both;
+	height: 2px;
+	margin: 40px auto;
+	max-width: 1000px;
+	width: 80%;
+}
+
+/************************************
+COLORS
+**************************************/
+html {
+	color: #393939;
+
+	--color-tan: #f8f3e7;
+	--color-sage: #d3d0d9;
+	--color-white: #ffffff;
+	--color-gray: #333;
+	--color-light-gray: #505050;
+	--color-punch: #f6412f;
+	--color-blue: rgb(66,134,244);
+}
+
+/************************************
+Typography
+**************************************/
+
+html { 
+	--font-primary: 'Source Serif Pro', serif;
+	--font-secondary: 'Spartan', sans-serif;
+}
+
+h1, h2, h4, h5, h6 {
+	color: var(--color-gray);
+	font-family: var(--font-primary);
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: 700;
+	letter-spacing: 0.01em;
+	line-height: 1.2;
+}
+
+h2 {
+	font-size: 2.5em;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	line-height: 2;
+}
+
+h3 {
+	font-family: var(--font-secondary);
+	font-size: 1.4em;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	line-height: 1;
+	margin: 1rem 0 1.5rem 0;
+	text-transform: uppercase;
+}
+
+h4 {
+	font-size: 1.5em;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+}
+
+h5 {
+	font-size: 1.25em;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+h6 {
+	 font-size: 1em;
+	 font-weight: 200;
+	 line-height: 1;
+}
+
+
+p {
+	color: var(--color-light-gray);
+	font-family: var(--font-primary);
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.8;
+	padding-bottom: 1rem;
+}
+
+a {
+	color: var(--color-punch);
+	text-decoration: none;
+	border-bottom: 1px solid;
+}
+
+a:hover {
+	opacity: 1;
+	text-decoration: none;
+	transition: 300ms ease-in;
+}
+
+span {
+
+}
+
+/************************************
+NAVIGATION Component
+**************************************/
+
+/*
+div .nav-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+*/
+
+.nav-container {
+	align-items: center;
+	background-color: var(--color-white);
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,8%);
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	height: 150px;
+}
+
+.logo {
+	padding-top: 2rem;
+	text-align: center;
+}
+
+.logo a {
+	border-bottom: none;
+	color: var(--color-punch);
+	font-family: 'Fascinate', cursive;
+	font-size: 2.2rem;
+	font-weight: 800;
+	text-decoration: none;
+}
+
+div .logo a:hover {
+	border-bottom: none;
+	color: var(--color-punch);
+	text-decoration: none;
+}
+
+.nav-items {
+	justify-self: center;
+	display: inline-block;
+}
+
+
+.nav-items a {
+	border-bottom: none;
+	text-decoration: none;
+	font-family: 'Spartan', sans-serif;
+	font-size: 1em;
+	color: var(--color-light-gray);
+	padding: 1.5rem;
+}
+
+.nav-items a:hover {
+	color: var(--color-punch);
+	cursor: pointer;
+	text-decoration: none;
+	transition: 300ms ease-in;
+}
+
+@media screen and (min-width: 900px) {
+	.nav-container {
+		grid-gap: 1rem;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: none;
+		padding: 1rem 4rem 1rem 4rem;
+		height: 10vh;
+	}
+
+	.logo {
+		grid-column-start: 1;
+		align-self: center;
+		padding-top: 0;
+		justify-self: start;
+	}
+
+	.logo a {
+		font-size: 2.5rem;
+	}
+
+	.nav-items {
+		display: inline-block;
+		grid-column-start: 2;
+		font-family: 'Spartan', sans-serif;
+		font-size: 1em;
+		grid-column: 2;
+		justify-self: end;
+		align-self: center;
+	}
+
+	.nav-1 a, .nav-2 a {
+		margin-right: 1.2rem;
+		padding: .5rem;
+	}
+
+	.nav-items a:active {
+		font-style: italic;
+	}
+
+	.nav-button {
+		background-color: var(--color-punch);
+		border: 1px solid var(--color-punch) !important;
+		color: white !important;
+		font-family: var(--font-secondary);
+		grid-column: 3;
+		letter-spacing: 0.08em;
+		padding: 12px 16px 12px 16px !important;
+		text-transform: uppercase;
+		margin-right: 0;
+	}
+
+	.nav-button:hover {
+		background-color: white;
+		color: var(--color-punch) !important;
+		text-decoration: none !important;
+		transition: 300ms ease-in;
+	}
+
+	.nav-button:active {
+		background-color: var(--color-punch);
+		border: 1px solid var(--color-punch);
+		color: white !important;
+		font-style: italic;
+	}
+
+}
+
+/************************************
+Header Component
+**************************************/
+
+
+.intro {
+	align-items: center;
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-columns: repeat(12,1fr);
+	margin: auto;
+	max-width: 1400px;
+	padding: 0rem;
+	width: 100%;
+}
+
+.intro .intro-text {
+	grid-column: 2 / span 10;
+	line-height: 1.2;
+	margin: auto;
+	padding: 3rem 0 1rem 0;
+	text-align: center;
+}
+
+.intro-text h1 {
+	padding-bottom: 1.2rem;
+}
+
+.intro-text .recipe-description {
+	color: var(--color-light-gray);
+	font-family: var(--font-primary);
+	font-size: 1em;
+	font-weight: 300;
+	line-height: 1.8;
+	margin-top: 0;
+	padding: 0;
+}
+
+.intro .intro-img {
+	border-radius: 10px;
+	grid-column: 1 / span 12;
+	padding: 0;
+}
+
+@media screen and (min-width: 950px) {
+	.intro .intro-text {
+		grid-column: 3 / span 8;
+	}
+	.intro-text .recipe-description {
+		font-size: 1.1em;
+	}
+
+	.intro .intro-img {
+		border-radius: 10px;
+		grid-column: 2 / span 10;
+		padding: 0;
+	}
+}
+
+/****************************************************
+LISTS & FORM STYLES
+******************************************************/
+
+.overview ul, .ingredients ul {
+	list-style-position: outside;
+  	margin: 1rem 1rem 1rem 2.6rem;
+  	padding: 0;
+}
+
+.overview ul, .ingredients ul {
+	list-style-type: disc;
+}
+
+li {
+	color: var(--color-light-gray);
+	font-family: var(--font-primary);
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.8;
+	padding-bottom: .2rem;
+	padding-left: .5rem;
+}
+
+
+/**********************************************
+MAIN CONTENT GRID
+************************************************/
+
+.main-content {
+	align-items: center;
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-columns: repeat(12,1fr);
+	margin: auto;
+	max-width: 1200px;
+	padding: 0rem;
+	width: 100%;
+}
+
+.about-recipe {
+	grid-column: 2 / span 10;
+}
+
+.main-content a {
+	opacity: 0.8;
+}
+
+.main-content a:hover {
+	opacity: 1;
+}
+
+.overview {
+	margin-top: 1rem;
+}
+
+.overview, .ingredients, .steps {
+	grid-column: 2 / span 10;
+}
+
+.blu-hghlght {
+	background: linear-gradient(0deg, rgba(66,134,244,.2) 50%, transparent 20%);
+	font-weight: 800;
+	padding-bottom: 0;
+
+}
+
+.pnk-hghlght {
+	background: linear-gradient(0deg, rgba(246,65,47,.2) 50%, transparent 20%);
+	font-size: 1.2em;
+	font-weight: 800;
+	padding-bottom: 0;
+}
+
+@media screen and (min-width: 900px) {
+	.steps {
+		margin-bottom: 3rem;
+	}
+	.overview, .ingredients, .steps {
+		font-size: 1.1em;
+		grid-column: 3 / span 7;
+	}
+
+	.about-recipe {
+		font-size: 1.1em;
+		grid-column: 3 / span 8;
+	}
+}
+
+/**********************************************
+more CONTENT GRID
+************************************************/
+.more-content {
+	display: none;
+}
+
+@media screen and (min-width: 700px) {
+	.more-content {
+		background-color: var(--color-tan);
+		display: grid;
+		grid-gap: 0;
+		grid-template-columns: repeat(12,1fr);
+		padding: 1rem 0 3rem 0;
+	}
+
+
+	.more-content h3 {
+		font-weight: 900;
+		font-size: 2.7em;
+	}
+
+	.cntrd-txt {
+		font-size: 3em;
+		grid-column: 1 / span 14;
+		padding: 2rem 0 2rem 0;
+		text-align: center;
+	}
+
+	.more-content a {
+
+	}
+
+	.item-1, .item-2, .item-3 {
+		height: 100%;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		width: 100%;
+    	margin: auto;
+    	overflow: hidden;
+	}
+
+	.item-1 img, .item-2 img, .item-3 img {
+		transition: all 0.3s;
+    	display: block;
+    	height: auto;
+    	transform: scale(1);
+    	width: 100%;
+	}
+
+	.item-1 img:hover, .item-2 img:hover, .item-3 img:hover {
+		transform: scale(1.1);
+	}
+
+	.item-1 {
+		grid-column: 1 / span 4;
+	}
+
+	.item-2 {
+		grid-column: 5 / span 4;
+	}
+	.item-3 {
+		grid-column: 9 / span 4;
+	}
+
+}
+
+/************************************
+Footer Component
+**************************************/
+
+footer {
+	background-color: var(--color-punch);
+}
+
+.footer-wrapper {
+	align-items: center;
+	display: grid;
+	height: 250px;
+	justify-content: center;
+	text-align: center;
+}
+
+.footer-right a {
+	border-bottom: none;
+	color: white;
+	display: block;
+	font-family: var(--font-secondary);
+	font-size: .9em;
+	letter-spacing: 0.06em;
+	opacity: 1;
+	padding: 1rem;
+	text-align: left;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.footer-right a:hover {
+	font-style: italic;
+}
+
+.footer-left p {
+	color: white;
+	font-family: var(--font-secondary);
+	font-size: .9em;
+	padding: 1rem;
+}
+
+@media screen and (min-width: 950px) {
+
+	.footer-wrapper {
+		grid-template-columns: repeat(5,1fr);
+	}
+
+	.footer-left {
+		grid-column: 2 / span 1;
+		justify-self: center;
+	}
+
+	.footer-right {
+		grid-column: 4 / span 1;
+	}
+
+}
